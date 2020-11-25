@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+    .btn{
+        margin-bottom: 1em;
+    }
+    .p{
+        font-family:fantasy
+    }
+</style>
+
+<div class="container">
+    <p> <b> Do you really want to delete it "{{item}}" ?! </b> </p>
+
+    <a class="btn btn-success" href="{% url 'list' %}">Cancel</a>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <input class="btn btn-danger" type="submit" name="Confirm" value="confirm">
+    </form>
+</div>
